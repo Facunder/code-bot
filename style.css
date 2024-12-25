@@ -1,0 +1,18 @@
+/* background */
+body {
+    background-color: #f0f2f6;
+}
+
+/* title color and font */
+h1 {
+    color: #ff4b4b;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/* button style */
+button {
+    background-color: #ff4b4b !important;
+    border-radius: 8px !important;
+    color: #fff !important;
+}
