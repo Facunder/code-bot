@@ -1,18 +1,114 @@
-/* background */
+/* ===== Global Settings ===== */
 body {
+    background-color: #f5f7fa;  /* Overall background: soft grayish white */
+    color: #333333;             /* Global text color */
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Layout container: differentiates the central area from the sidebar */
+[data-testid="stAppViewContainer"] {
+    background-color: #f5f7fa; /* Same as body, can be changed to a lighter or darker shade */
+}
+
+/* ===== Headings and Text ===== */
+/* Streamlit Markdown headings are typically h1, h2, h3, etc. */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;          /* Semi-bold font */
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+    color: #2c3e50;            /* Darker color for better contrast */
+}
+
+p {
+    line-height: 1.6em;        /* Paragraph line spacing */
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+/* Link color styling */
+a {
+    color: #268bd2;            /* Soft blue */
+    text-decoration: none;     /* Remove underline */
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Buttons ===== */
+/* Streamlit buttons typically match .stButton > button */
+.stButton > button {
+    background-color: #3498db;  /* Main color: a mild blue */
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6em 1em;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.stButton > button:hover {
+    background-color: #2980b9;  /* Darker blue on hover */
+}
+
+/* ===== Sidebar ===== */
+/* The sidebar container typically has data-testid="stSidebar" */
+[data-testid="stSidebar"] {
+    background-color: #ffffff;  /* Different from main background, can also be a light gray */
+    border-right: 1px solid #e0e4e8; /* Divider line on the right edge */
+}
+
+/* Simple example of styling headings/text inside the sidebar */
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2 {
+    color: #2c3e50;            
+}
+
+/* ===== Input Elements (text boxes, dropdowns, etc.) ===== */
+/* Includes text_input, number_input, selectbox, textarea, etc. */
+.stTextInput, .stNumberInput, .stSelectbox, .stTextArea {
+    background-color: #ffffff;
+    border-radius: 6px;
+    border: 1px solid #dce1e6;
+    margin-bottom: 0.8em;
+}
+
+/* Placeholder text color (must use ::placeholder) */
+.stTextInput input::placeholder,
+.stTextArea textarea::placeholder {
+    color: #888888;
+}
+
+/* ===== Scrollbar Styling (Optional) ===== */
+::-webkit-scrollbar {
+    width: 8px;
     background-color: #f0f2f6;
 }
-
-/* title color and font */
-h1 {
-    color: #ff4b4b;
-    font-size: 3rem;
-    font-weight: bold;
+::-webkit-scrollbar-thumb {
+    background-color: #ced4da;
+    border-radius: 4px;
 }
 
-/* button style */
-button {
-    background-color: #ff4b4b !important;
-    border-radius: 8px !important;
-    color: #fff !important;
+/* ===== Code Block Styling ===== */
+code, pre code {
+    font-family: "Source Code Pro", monospace;
+    background-color: #e9ecef;
+    color: #d63384;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+}
+
+/* Make large code blocks stand out and fit properly */
+pre code {
+    display: block;
+    padding: 1em;
+    overflow-x: auto;
+}
+
+/* ===== Alerts (e.g., st.warning) ===== */
+.element-container .stAlert {
+    border-left: 4px solid #f1c40f !important; /* Colored bar on the left */
+    background-color: #fef9e7 !important;      /* Light yellow background */
 }
