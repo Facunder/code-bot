@@ -1,7 +1,7 @@
 import openai
 import streamlit as st
 
-openai.api_key = "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"  # 在这里替换为你的 API 密钥
+openai.api_key = "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"
 
 def get_response_from_openai(prompt, model="gpt-4o"):
     try:
@@ -52,58 +52,6 @@ def generate_code(task_description, language="Python", with_comments=False, comm
     # ...
     """ 
     return get_response_from_openai(prompt)
-
-# def main(): 
-#     st.title("AI Coding Assistant") 
-#     st.write("Powered by OpenAI GPT")
-
-#     task_option = st.selectbox("What would you like to do?", ["Fix Code", "Generate Code"])
-
-#     if task_option == "Fix Code":
-#         st.subheader("Fix Your Code")
-#         code_input = st.text_area("Paste your code here:", height=200)
-#         language = st.selectbox("Choose a programming language:", ["Python", "C++", "Java", "JavaScript", "Other"])
-#         if st.button("Fix Code"):
-#             if code_input.strip():
-#                 st.write("Processing your request...")
-#                 fixed_result = fix_code(code_input, language)
-#                 parts = fixed_result.split("Explanation:")
-#                 if len(parts) == 2:
-#                     repaired_code = parts[0].strip()
-#                     explanation = parts[1].strip()
-#                     st.subheader("Repaired Code:")
-#                     st.markdown(repaired_code)
-#                     st.subheader("Explanation:")
-#                     st.write(explanation)
-#                 else:
-#                     st.markdown(fixed_result)
-#             else:
-#                 st.warning("Please provide a code snippet to fix.")
-                
-#     elif task_option == "Generate Code":
-#         st.subheader("Generate Code")
-#         task_description = st.text_area("Describe your task:", height=150)
-#         language = st.selectbox("Choose a programming language:", ["Python", "C++", "Java", "JavaScript", "Other"])
-#         with_comments_option = st.selectbox("Do you need comments?", ["Yes", "No"])
-#         comment_language_option = st.selectbox("Comment language:", ["English", "Chinese"])
-
-#         if st.button("Generate Code"):
-#             if task_description.strip():
-#                 st.write("Generating code...")
-#                 need_comments = (with_comments_option == "Yes")
-#                 generated_result = generate_code(
-#                     task_description, 
-#                     language, 
-#                     need_comments, 
-#                     comment_language_option
-#                 )
-#                 st.subheader("Generated Code:")
-#                 st.markdown(generated_result)
-#             else:
-#                 st.warning("Please provide a task description.")
-                
-# if __name__ == "__main__": 
-#     main()
 
 def local_css(file_name: str):
     with open(file_name) as f:
