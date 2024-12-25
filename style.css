@@ -16,3 +16,10 @@ button {
     border-radius: 8px !important;
     color: #fff !important;
 }
+
+[data-testid="stAppViewContainer"] {
+    background-image: url("https://your-image-link.com/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
