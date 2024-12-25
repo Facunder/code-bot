@@ -58,19 +58,7 @@ def local_css(file_name: str):
     with open(file_name) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-page_bg_img = """
-    <style>
-    [data-testid="stAppViewContainer"] {
-        background-image: url("https://github.com/Facunder/code-bot/edit/main/figures/sunrise_background.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    </style>
-    """
-
 def main():
-    st.markdown(page_bg_img, unsafe_allow_html=True)
     st.title("AI Coding Assistant") 
     local_css("./style.css")
     st.write("Powered by OpenAI GPT")
