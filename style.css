@@ -12,15 +12,6 @@ body {
     background-color: #f5f7fa; /* Same as body, can be changed to a lighter or darker shade */
 }
 
-/* ===== Headings and Text ===== */
-/* Streamlit Markdown headings are typically h1, h2, h3, etc. */
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;          /* Semi-bold font */
-    margin-top: 0.6em;
-    margin-bottom: 0.6em;
-    color: #2c3e50;            /* Darker color for better contrast */
-}
-
 p {
     line-height: 1.6em;        /* Paragraph line spacing */
     margin-top: 0.5em;
