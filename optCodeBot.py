@@ -61,7 +61,7 @@ def local_css(file_name: str):
 page_bg_img = """
     <style>
     [data-testid="stAppViewContainer"] {
-        background-image: "figures/sunrise_background.jpg";
+        background-image: url("https://github.com/Facunder/code-bot/edit/main/figures/sunrise_background.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -79,7 +79,23 @@ def main():
 
     if task_option == "Fix Code":
         st.subheader("Fix Your Code")
-        code_input = st.text_area("Paste your code here:", height=200)
+
+        code_input_method = st.radio(
+            "How do you want to provide your code snippet?",
+            ("Paste code", "Upload file")
+        )
+
+        code_input = ""
+        if code_input_method == "Paste code":
+            code_input = st.text_area("Paste your code here:", height=200)
+        else:
+            uploaded_file = st.file_uploader(
+                "Upload your code file",
+                type=["py", "cpp", "java", "js", "txt"]
+            )
+            if uploaded_file is not None:
+                code_input = uploaded_file.read().decode("utf-8")
+
         language = st.selectbox("Choose a programming language:", ["Python", "C++", "Java", "JavaScript", "Other"])
 
         if st.button("Fix Code"):
@@ -98,8 +114,8 @@ def main():
                 else:
                     st.markdown(f"```\n{fixed_result}\n```")
             else:
-                st.warning("Please provide a code snippet to fix.")
-
+                st.warning("Please provide a code snippet to fix (or upload a file).")
+                
     elif task_option == "Generate Code":
         st.subheader("Generate Code")
         task_description = st.text_area("Describe your task:", height=150)
