@@ -22,6 +22,6 @@
 
 ## 使用方法
 
-已经使用streamlit网站分享平台https://share.streamlit.io/制作为开源网站
+已经使用streamlit网站分享平台https://share.streamlit.io/ 制作为开源网站
 
 网址: https://fdu-aicourse-code-bot.streamlit.app/
